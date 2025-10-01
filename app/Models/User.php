@@ -4,15 +4,18 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
 use Laravel\Fortify\TwoFactorAuthenticatable;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, TwoFactorAuthenticatable;
+    use HasFactory, Notifiable, TwoFactorAuthenticatable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -20,6 +23,7 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
+        'cooperative_id',
         'name',
         'email',
         'password',
@@ -56,7 +60,23 @@ class User extends Authenticatable
         return Str::of($this->name)
             ->explode(' ')
             ->take(2)
-            ->map(fn ($word) => Str::substr($word, 0, 1))
+            ->map(fn($word) => Str::substr($word, 0, 1))
             ->implode('');
+    }
+
+    /**
+     * Get the cooperative that owns the user.
+     */
+    public function cooperative(): BelongsTo
+    {
+        return $this->belongsTo(Cooperative::class);
+    }
+
+    /**
+     * Get the member associated with the user.
+     */
+    public function member(): HasOne
+    {
+        return $this->hasOne(Member::class);
     }
 }
