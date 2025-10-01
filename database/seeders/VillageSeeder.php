@@ -22,12 +22,14 @@ class VillageSeeder extends Seeder
     }
 
     $villages = [
-      ['code' => '3603102001', 'name' => 'Kosambi'],
-      ['code' => '3603102002', 'name' => 'Sukadiri'],
-      ['code' => '3603102003', 'name' => 'Sukatani'],
-      ['code' => '3603102004', 'name' => 'Sukamantri'],
-      ['code' => '3603102005', 'name' => 'Sukajadi'],
-      ['code' => '3603102006', 'name' => 'Sukamulya'],
+      ['code' => '3603102001', 'name' => 'Gintung'],
+      ['code' => '3603102002', 'name' => 'Mekar Kondang'],
+      ['code' => '3603102003', 'name' => 'Buaran Jati'],
+      ['code' => '3603102004', 'name' => 'Kosambi'],
+      ['code' => '3603102005', 'name' => 'Rawa Kidang'],
+      ['code' => '3603102006', 'name' => 'Sukadiri'],
+      ['code' => '3603102007', 'name' => 'Karang Serang'],
+      ['code' => '3603102008', 'name' => 'Pekayon'],
     ];
 
     foreach ($villages as $village) {
