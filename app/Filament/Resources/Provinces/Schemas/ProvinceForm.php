@@ -12,9 +12,11 @@ class ProvinceForm
         return $schema
             ->components([
                 TextInput::make('code')
+                    ->label('Kode Provinsi')
                     ->required()
                     ->maxLength(2),
                 TextInput::make('name')
+                    ->label('Nama Provinsi')
                     ->required()
                     ->maxLength(255),
             ])->columns(1);

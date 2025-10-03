@@ -18,9 +18,11 @@ class ProvincesTable
         return $table
             ->columns([
                 TextColumn::make('code')
+                    ->label('Kode Provinsi')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('name')
+                    ->label('Nama Provinsi')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('created_at')
