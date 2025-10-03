@@ -94,7 +94,8 @@ class CooperativeForm
                     ->label('Nomor Badan Hukum')
                     ->placeholder('AHU-0033698.AH.01.29.TAHUN 2025')
                     ->required()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->unique(),
                 TextInput::make('name')
                     ->label('Nama Koperasi')
                     ->placeholder('KOPERASI DESA MERAH PUTIH KOSAMBI SUKADIRI')

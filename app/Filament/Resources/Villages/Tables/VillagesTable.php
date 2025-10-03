@@ -18,12 +18,23 @@ class VillagesTable
         return $table
             ->columns([
                 TextColumn::make('code')
+                    ->label('Kode Desa/Kelurahan')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('name')
+                    ->label('Nama Desa/Kelurahan')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('district.name')
+                    ->label('Kecamatan')
+                    ->searchable()
+                    ->sortable(),
+                TextColumn::make('district.regency.name')
+                    ->label('Kabupaten/Kota')
+                    ->searchable()
+                    ->sortable(),
+                TextColumn::make('district.regency.province.name')
+                    ->label('Provinsi')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('created_at')

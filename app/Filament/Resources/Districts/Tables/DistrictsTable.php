@@ -18,12 +18,19 @@ class DistrictsTable
         return $table
             ->columns([
                 TextColumn::make('code')
+                    ->label('Kode Kecamatan')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('name')
+                    ->label('Nama Kecamatan')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('regency.name')
+                    ->label('Kabupaten/Kota')
+                    ->searchable()
+                    ->sortable(),
+                TextColumn::make('regency.province.name')
+                    ->label('Provinsi')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('created_at')

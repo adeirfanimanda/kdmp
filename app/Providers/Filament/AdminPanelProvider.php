@@ -37,9 +37,6 @@ class AdminPanelProvider extends PanelProvider
                 NavigationGroup::make()
                     ->label('Data Wilayah')
                     ->icon('heroicon-o-map'),
-                NavigationGroup::make()
-                    ->label('Koperasi')
-                    ->icon('heroicon-o-building-office-2')
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')

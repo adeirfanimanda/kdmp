@@ -18,12 +18,15 @@ class RegenciesTable
         return $table
             ->columns([
                 TextColumn::make('code')
+                    ->label('Kode Kabupaten/Kota')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('name')
+                    ->label('Nama Kabupaten/Kota')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('province.name')
+                    ->label('Provinsi')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('created_at')
